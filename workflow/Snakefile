@@ -1,0 +1,42 @@
+ #! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Setup
+
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
+from builtins import *
+
+import pandas as pd
+import os
+import sys
+import re
+import gzip
+from collections import defaultdict
+
+from snakemake.utils import min_version
+
+min_version("6.4.1")
+
+from snakemake.exceptions import RuleException
+
+# config file
+configfile: "config/config.yaml"
+
+# Set up sample wildcards
+samples = pd.read_table(config["sample_tsv"])
+sample_names = sorted(samples["sample"].drop_duplicates().values)
+
+
+rule all:
+    input:
+        expand("results/completed/{s}_completed.txt", s=sample_names),
+        expand("results/fastqc/{s}/{s}_R1_001_fastqc.html", s=sample_names),
+        expand("results/fastqc/{s}/{s}_R2_001_fastqc.html", s=sample_names)
+
+# Rules to include
+include: "rules/references.smk"
+include: "rules/fastqc.smk"
+include: "rules/star_index.smk"
+include: "rules/star_alignment.smk"
+include: "rules/telescope.smk"
