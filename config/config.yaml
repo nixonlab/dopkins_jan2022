@@ -40,18 +40,18 @@ indexes:
 
 annotations:
     gencode: "refs/downloads/gencode.v38.annotation.gtf.gz"
-    # herv: "refs/downloads/HERV_rmsk.hg38.v2.gtf"
-    # l1: "refs/downloads/L1Base.hg38.v1.gtf"
+    herv: "refs/downloads/HERV_rmsk.hg38.v2.gtf"
+    l1: "refs/downloads/L1Base.hg38.v1.gtf"
     retro: "refs/annotation/retro.gtf"
     retro_tsv: "refs/annotation/retro.tsv"
-    # herv_tsv: "refs/annotation/HERV_rmsk.hg38.v2.tsv"
-    # l1_tsv: "refs/annotation/L1Base.hg38.v1.tsv"
+    herv_tsv: "refs/annotation/HERV_rmsk.hg38.v2.tsv"
+    l1_tsv: "refs/annotation/L1Base.hg38.v1.tsv"
     ttg: "refs/annotation/ttg.tsv"
     gsym: "refs/annotation/gsym.tsv"
 
 ##### rule-specific resources and parameters #####
 
-# fastqc
+# FASTQC
 fastqc_threads: 24
 
 # STAR index
@@ -63,6 +63,9 @@ star_index_mem_mb: 40000
 star_alignment_threads: 24
 outFilterMultimapNmax: 200
 winAnchorMultimapNmax: 200
+
+# RSEQC
+rseqc_threads: 2
 
 # TELESCOPE
 telescope_threads: 2

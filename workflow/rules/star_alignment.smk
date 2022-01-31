@@ -33,5 +33,6 @@ rule star_alignment:
             --outSAMstrandField intronMotif\
             --outFilterMultimapNmax {params.outFilterMultimapNmax}\
             --winAnchorMultimapNmax {params.winAnchorMultimapNmax}\
-            --outSAMunmapped Within KeepPairs
+            --outSAMunmapped Within KeepPairs\
+            --readFilesCommand zcat
         '''

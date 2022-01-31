@@ -34,6 +34,10 @@ rule all:
         expand("results/fastqc/{s}/{s}_R1_001_fastqc.html", s=sample_names),
         expand("results/fastqc/{s}/{s}_R2_001_fastqc.html", s=sample_names)
 
+rule run_star_algn:
+    input:
+        expand("results/star_alignment/{s}/{s}_GDC38.Aligned.out.bam", s=sample_names)
+
 # Rules to include
 include: "rules/references.smk"
 include: "rules/fastqc.smk"
