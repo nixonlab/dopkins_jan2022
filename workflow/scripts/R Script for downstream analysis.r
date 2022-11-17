@@ -58,12 +58,12 @@ resultsMonoFLADESEQ <- results(ddsHERVsMonoDESEQ, name = "Condition_FLA_vs_CTRL"
 resultsMonoLPSDESEQ <- results(ddsHERVsMonoDESEQ, name = "Condition_LPS_vs_CTRL")
 
 pdf("FLA_Mono_Volcano_Plot1.pdf")
-EnhancedVolcano::EnhancedVolcano(resultsMonoFLADESEQ, lab = rownames(resultsMonoFLADESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'Flagella Stimulated Monocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2, xlim = c(-20, 20), ylim = c(0, 5))
+EnhancedVolcano::EnhancedVolcano(resultsMonoFLADESEQ, lab = rownames(resultsMonoFLADESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'Flagella Stimulated Monocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2.5,  labFace = 'bold', xlim = c(-20, 20), ylim = c(0, 5))
 
 dev.off()
 
 pdf("LPS_Mono_Volcano_Plot1.pdf")
-EnhancedVolcano::EnhancedVolcano(resultsMonoLPSDESEQ, lab = rownames(resultsMonoLPSDESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'LPS Stimulated Monocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2, xlim = c(-20, 20), ylim = c(0, 5))
+EnhancedVolcano::EnhancedVolcano(resultsMonoLPSDESEQ, lab = rownames(resultsMonoLPSDESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'LPS Stimulated Monocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2.5,  labFace = 'bold', xlim = c(-20, 20), ylim = c(0, 5))
 
 dev.off()
 
@@ -79,12 +79,12 @@ resultsLymphoFLADESEQ <- results(ddsHERVsLymphoDESEQ, name = "Condition_FLA_vs_C
 resultsLymphoLPSDESEQ <- results(ddsHERVsLymphoDESEQ, name = "Condition_LPS_vs_CTRL")
 
 pdf("FLA_Lympho_Volcano_Plot1.pdf")
-EnhancedVolcano::EnhancedVolcano(resultsLymphoFLADESEQ, lab = rownames(resultsLymphoFLADESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'Flagella Stimulated Lymphocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2, xlim = c(-20, 20), ylim = c(0, 5))
+EnhancedVolcano::EnhancedVolcano(resultsLymphoFLADESEQ, lab = rownames(resultsLymphoFLADESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'Flagella Stimulated Lymphocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2.5,  labFace = 'bold', xlim = c(-20, 20), ylim = c(0, 5))
 
 dev.off()
 
 pdf("LPS_Lympho_Volcano_Plot1.pdf")
-EnhancedVolcano::EnhancedVolcano(resultsLymphoLPSDESEQ, lab = rownames(resultsLymphoLPSDESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'LPS Stimulated Lymphocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2, xlim = c(-20, 20), ylim = c(0, 5))
+EnhancedVolcano::EnhancedVolcano(resultsLymphoLPSDESEQ, lab = rownames(resultsLymphoLPSDESEQ), x = 'log2FoldChange', y = 'pvalue', title = 'LPS Stimulated Lymphocytes', pCutoff = 0.05, FCcutoff = 1, labSize = 2.5,  labFace = 'bold',, xlim = c(-20, 20), ylim = c(0, 5))
 
 dev.off()
 
